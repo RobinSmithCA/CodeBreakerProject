@@ -18,10 +18,12 @@ function guess()
       if ( result )
       {
          setMessage( 'You Win! :)' );
+         showReplay();
       }
       else if ( attempt.value >= 10 )
       {
          setMessage( 'You Lose! :(' );
+         showReplay();
       }
       else
       {
@@ -29,7 +31,6 @@ function guess()
       }
 
       showAnswer( result );
-      showReplay();
 
       attempt.value++;
    }
@@ -93,7 +94,7 @@ function getResults( input )
 
    str += '</div></div>';
 
-   document.getElementById('results').innerHTML = str;
+   document.getElementById('results').innerHTML += str;
 
    if ( count == 4 )
    {
